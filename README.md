@@ -86,10 +86,7 @@ in Bambu Studio. Every setting is inside. AMS lite: **grey in slot 1, turquoise 
 | 3 | rails, lid, door, ATOM key | grey | 1 h 20 |
 | 4 | top frame with the inlaid logo | grey + turquoise | 7 h 40 |
 
-<p align="center">
-  <img src="docs/clips/printing-slider.webp" alt="Printing the turquoise slider on a Bambu Lab A1 mini" width="49%">
-  <img src="docs/clips/ams-printing.webp" alt="The A1 mini with the AMS lite loaded with grey, turquoise and yellow" width="36%">
-</p>
+<img src="docs/clips/printing.webp" alt="Printing on a Bambu Lab A1 mini: the turquoise slider on the bed, and the AMS lite loaded with grey, turquoise and yellow PETG." width="100%">
 
 - **No AMS?** Plates 1 to 3 use one colour each. On plate 4, set the logo part to grey: the same engraving, in 2 h 20.
 - **PETG, not PLA:** the housing sits next to the boiler. 0.2 mm layers, 3 walls, 25 % gyroid, tree supports from the
