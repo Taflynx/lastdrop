@@ -9,9 +9,13 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/render-on-tank.png" alt="Lastdrop hanging on the water tank" height="400">
+  <img src="docs/photos/hero.jpg" alt="The printed Lastdrop: turquoise sensor head and slider, yellow thumb screws, engraved logo" width="820">
+</p>
+
+<p align="center">
+  <img src="docs/images/render-on-tank.png" alt="Lastdrop hanging on the water tank" height="380">
   &nbsp;&nbsp;
-  <img src="docs/images/render-engraving.png" alt="The engraved LED face with the turquoise logo" height="400">
+  <img src="docs/images/render-engraving.png" alt="The engraved LED face with the turquoise logo" height="380">
 </p>
 
 ---
@@ -101,7 +105,12 @@ It fires:
 
 ## The housing
 
-<p align="center"><img src="docs/images/render-device.png" alt="The whole holder" height="520"></p>
+<p align="center"><img src="docs/images/render-pair.png" alt="The whole holder, from the machine side and from the tank side with the white sensor face" height="520"></p>
+
+<p align="center">
+  <img src="docs/photos/sensor-side.jpg" alt="The tank side: the white sensor face in the turquoise head, the black cable up to the box" width="49%">
+  <img src="docs/photos/standing.jpg" alt="The holder standing, seen from the tank side" width="49%">
+</p>
 
 Everything hangs on the rim of the original tank. Nothing is stuck to the machine.
 
@@ -172,6 +181,17 @@ Also here: [`lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf`](3d/housing/print/la
 - **Small text:** every engraved stroke is at least 0.5 to 0.6 mm wide, so a 0.4 mm nozzle can draw it. If you change
   the text, keep it that way (`NAME_GROW` and `BYLINE_GROW` in `build.py`).
 
+<p align="center">
+  <img src="docs/clips/printing-slider.webp" alt="Printing the turquoise slider on a Bambu Lab A1 mini" width="49%">
+  <img src="docs/clips/ams-printing.webp" alt="The A1 mini with the AMS lite: grey, turquoise and yellow" width="36%">
+</p>
+<p align="center">
+  <img src="docs/photos/printing-screws.jpg" alt="The four yellow thumb screws, just printed" width="42%">
+  <img src="docs/photos/ams-spools.jpg" alt="Turquoise, grey and yellow PETG in the AMS lite" width="42%">
+</p>
+<p align="center"><sub>Full-quality clips: <a href="docs/clips/printing-slider.mp4">printing-slider.mp4</a> ·
+<a href="docs/clips/ams-printing.mp4">ams-printing.mp4</a></sub></p>
+
 ## Assembly
 
 1. Push the sensor into the sensor head from the front, narrow end first. The wide face ends flush with the front.
@@ -182,6 +202,15 @@ Also here: [`lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf`](3d/housing/print/la
    at the height you want. Clip the sensor head onto the carriage.
 6. Slide the lid and the door on.
 7. Hang the frame on the narrow end of the tank, then plug in the USB-C cable through the door side.
+
+<p align="center">
+  <img src="docs/photos/inside.jpg" alt="The open box: Grove cable, wires and the lid" width="49%">
+  <img src="docs/photos/in-hand.jpg" alt="Wiring the WAGOs before closing the box" width="32%">
+</p>
+<p align="center">
+  <img src="docs/photos/on-tank-side.jpg" alt="Hanging on the tank, next to the machine wall" width="40%">
+  <img src="docs/photos/on-tank-top.jpg" alt="The hook over the tank rim, seen from above" width="36%">
+</p>
 
 **Setting the height:** the alert fires when the water drops below the sensor. Set it a little above the level at which
 the machine stops, so you keep 2 to 3 shots of warning.
@@ -226,12 +255,15 @@ home-assistant/    the low-water automation
 3d/housing/print/  ready-to-print STL and Bambu Studio 3MF files
 3d/fonts/          fonts used for the engraving (SIL OFL)
 docs/images/       logo, diagrams and renders
-media/             photos and videos of the real thing
+docs/photos/       photos of the printed housing
+docs/clips/        short printing clips (WebP for the page, MP4 full quality)
 ```
 
 ## Photos and videos
 
-See [`media/`](media).
+Photos of the real thing are in [`docs/photos`](docs/photos), printing clips in [`docs/clips`](docs/clips).
+They show the first full print, made before the logo was added to the model; on the top photo the engraving was
+laid onto that print to show the finished look.
 
 ---
 
