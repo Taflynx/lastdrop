@@ -29,6 +29,7 @@ wifi:
   password: !secret wifi_password
   ap:
     ssid: "Lastdrop Fallback"
+    password: !secret lastdrop_ap_password   # hotspot used only when Wi-Fi is down: never leave it open
 
 captive_portal:
 

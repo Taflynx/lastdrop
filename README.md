@@ -71,7 +71,8 @@ Wire colours sometimes differ between sellers, so check the product page first.
 The config is in [`firmware/lastdrop.yaml`](firmware/lastdrop.yaml).
 
 1. Copy [`firmware/secrets.yaml.example`](firmware/secrets.yaml.example) to `secrets.yaml` next to it, in your ESPHome
-   config folder, and fill in your Wi-Fi, an API key and an OTA password. Never commit `secrets.yaml`.
+   config folder, and fill in your Wi-Fi, an API key, an OTA password and a password for the fallback hotspot (used only when
+   the device cannot reach your Wi-Fi). Never commit `secrets.yaml`.
 2. Flash it once over USB from the ESPHome dashboard. Later updates go over Wi-Fi.
 3. Home Assistant finds the new device. Adopt it.
 
