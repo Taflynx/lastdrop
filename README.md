@@ -11,6 +11,8 @@ and a small ESP32 in a 3D-printed housing tells Home Assistant. Nothing is opene
 Built for an **ECM Classika PID**. It works on any machine with a plastic or glass tank you can reach from the
 outside, and the housing is parametric, so it can be fitted to another tank.
 
+<p align="center"><img src="docs/clips/explode.webp" alt="Exploded view: the sensor, head, rails, thumb screws, slider, ATOM Lite, WAGO connectors, key, lid and door come together into the finished Lastdrop, then drift apart again." width="100%"></p>
+
 <img src="docs/images/flow.jpg" alt="Sense through the wall, read on the ESP32, decide in Home Assistant, warn by LED, voice and phone." width="100%">
 
 <img src="docs/images/panel-real.jpg" alt="The printed housing: engraved LED face with the turquoise logo, the sensor head from the tank side, and the inside of the box." width="100%">
