@@ -45,9 +45,11 @@ NAME_GROW = 0.20                                 # outline grown per side: the s
 # line: (text, cap/x height, extra letter spacing, grow) in BYLINE_FONT, or a dict of font segments on one baseline (see branding.rich_line)
 import os
 _F = lambda n: os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "fonts", n)
-BYLINE = [("BY IGAL TAFLEV", 1.8, 0.35, 0.15),
-          {"h": 2.1, "ref": "x", "segments": [("taflev", _F("Geist-600.ttf"), 0.0, 0.10),
-                                              (".com", _F("InstrumentSerif-Italic.ttf"), 0.0, 0.18)]}]
+BYLINE = []                                     # 2026-11-26: "BY IGAL TAFLEV" removed (Igal); was 1.8 mm caps, unreadable in print
+# site name on its own, plain grey engraving at the bottom of the LED face (was 2.1 mm under the name, too small to read)
+URL = {"h": 3.0, "ref": "x", "segments": [("taflev", _F("Geist-600.ttf"), 0.0, 0.10),
+                                          (".com", _F("InstrumentSerif-Italic.ttf"), 0.0, 0.18)]}
+URL_BOTTOM = 6.0                                # mm from the bottom of the box (YB0) to the bottom of the url
 BYLINE_GROW = 0.15
 DROP_R, DROP_TIP, DROP_LINE = 3.4, 2.25, 0.8    # logo: water drop outline (radius, tip distance / R, line width), low water inside
 GAPS = (2.2, 2.6, 1.5)                          # drop -> name -> byline -> url
@@ -197,8 +199,13 @@ COLORS = {"drop_ring": "turquoise", "water": "turquoise", "name": "turquoise"}  
 COLOR_POCKET, COLOR_SUNK = 1.0, 0.4
 def _branding():
     import branding
-    return branding, branding.layout(NAME_FONT, BYLINE_FONT, NAME, NAME_W, NAME_GROW, BYLINE, BYLINE_GROW,
-                                     (DROP_R, DROP_TIP, DROP_LINE), GAPS)
+    from shapely import affinity
+    from shapely.ops import unary_union
+    allshape, pieces = branding.layout(NAME_FONT, BYLINE_FONT, NAME, NAME_W, NAME_GROW, BYLINE, BYLINE_GROW,
+                                       (DROP_R, DROP_TIP, DROP_LINE), GAPS)
+    url = branding.rich_line(URL, BYLINE_FONT, BYLINE_GROW); b = url.bounds      # centred across the face, near the bottom
+    pieces["url"] = affinity.translate(url, -(b[0] + b[2]) / 2, (YB0 + URL_BOTTOM) - NAME_YC - b[1]).simplify(0.01)
+    return branding, (unary_union([allshape, pieces["url"]]), pieces)
 def _slab(shape, x0, x1):
     branding, _ = _branding.cache
     yc = NAME_YC

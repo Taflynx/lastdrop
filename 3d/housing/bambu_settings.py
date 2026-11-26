@@ -36,7 +36,11 @@ def project_settings(colours):
         "flush_volumes_vector": ["140"] * (2 * n),               # Bambu saves 2 per filament
         "flush_into_infill": "1",
         "wipe_tower_x": ["140"] * len(t["wipe_tower_x"]), "wipe_tower_y": ["20"] * len(t["wipe_tower_y"]),
-        "different_settings_to_system": [o["different_settings_to_system"][0] + ";curr_bed_type"] + [""] * n + [""],
+        "different_settings_to_system": [o["different_settings_to_system"][0] + ";curr_bed_type;outer_wall_speed;outer_wall_acceleration"] + [""] * n + [""],
+        # 2026-11-26: outer wall 200 mm/s was capped by PETG's 8 mm3/s, so it sped up and slowed down all the time and
+        # every layer came out a different shade (stripes on the LED face). A steady, slower outer wall fixes that.
+        "outer_wall_speed": ["60"] * len(t["outer_wall_speed"]),
+        "outer_wall_acceleration": ["2000"] * len(t["outer_wall_acceleration"]),
         "curr_bed_type": "Textured PEI Plate", "enable_prime_tower": "1", "from": "project", "name": "project_settings",
         "version": o.get("version", t["version"]),
     })
