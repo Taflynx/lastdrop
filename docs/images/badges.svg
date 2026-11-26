@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="766" height="29" viewBox="0 -0.5 766 29" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5">
+<g transform="translate(0,0)">
+  <rect width="156" height="28" rx="14" fill="#0c1012" stroke="#2a3a3e"/>
+  <path d="M14 0.5h57v27H14a13.5 13.5 0 0 1 0-27z" fill="#13383a"/>
+  <text x="35.5" y="18.5" text-anchor="middle" fill="#5ed6cd" font-weight="600">ESPHome</text>
+  <text x="113.5" y="18.5" text-anchor="middle" fill="#d6dee0">ATOM Lite</text>
+</g>
+<g transform="translate(166,0)">
+  <rect width="212" height="28" rx="14" fill="#0c1012" stroke="#2a3a3e"/>
+  <path d="M14 0.5h106v27H14a13.5 13.5 0 0 1 0-27z" fill="#13383a"/>
+  <text x="60.0" y="18.5" text-anchor="middle" fill="#5ed6cd" font-weight="600">Home Assistant</text>
+  <text x="166.0" y="18.5" text-anchor="middle" fill="#d6dee0">automation</text>
+</g>
+<g transform="translate(388,0)">
+  <rect width="198" height="28" rx="14" fill="#0c1012" stroke="#2a3a3e"/>
+  <path d="M14 0.5h36v27H14a13.5 13.5 0 0 1 0-27z" fill="#13383a"/>
+  <text x="25.0" y="18.5" text-anchor="middle" fill="#5ed6cd" font-weight="600">PETG</text>
+  <text x="124.0" y="18.5" text-anchor="middle" fill="#d6dee0">A1 mini + AMS lite</text>
+</g>
+<g transform="translate(596,0)">
+  <rect width="170" height="28" rx="14" fill="#0c1012" stroke="#2a3a3e"/>
+  <path d="M14 0.5h64v27H14a13.5 13.5 0 0 1 0-27z" fill="#13383a"/>
+  <text x="39.0" y="18.5" text-anchor="middle" fill="#5ed6cd" font-weight="600">CadQuery</text>
+  <text x="124.0" y="18.5" text-anchor="middle" fill="#d6dee0">parametric</text>
+</g>
+</svg>

@@ -2,12 +2,7 @@
   <img src="docs/images/hero.jpg" alt="Lastdrop: know before the last shot. A low-water alert for espresso machines: capacitive sensor, ESPHome, Home Assistant." width="100%">
 </p>
 
-<p align="center">
-  <img alt="ESPHome" src="https://img.shields.io/badge/ESPHome-ATOM%20Lite-1fb5ac?style=flat-square">
-  <img alt="Home Assistant" src="https://img.shields.io/badge/Home%20Assistant-automation-1fb5ac?style=flat-square">
-  <img alt="3D printed" src="https://img.shields.io/badge/PETG-A1%20mini%20%2B%20AMS%20lite-0c1012?style=flat-square">
-  <img alt="Parametric" src="https://img.shields.io/badge/CadQuery-parametric-0c1012?style=flat-square">
-</p>
+<p align="center"><img src="docs/images/badges.svg" alt="ESPHome on an ATOM Lite · Home Assistant automation · PETG on an A1 mini + AMS lite · parametric CadQuery model" height="29"></p>
 
 Many espresso machines only stop when the tank is already empty, in the middle of a shot. Lastdrop warns you while
 there are still two or three shots left. A sensor on the outside of the tank feels the water through the plastic,
