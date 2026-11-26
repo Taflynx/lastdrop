@@ -2,9 +2,9 @@
 <style>
   .bg{fill:#ffffff} .card{fill:#f4f7f7;stroke:#d5dede} .t{fill:#1d2a2e;font:600 15px system-ui,-apple-system,Segoe UI,sans-serif}
   .s{fill:#5b6b70;font:13px system-ui,-apple-system,Segoe UI,sans-serif} .wago{fill:#e9eef0;stroke:#8a9a9e}
-  .lever{fill:#f08a24}
+  .lever{fill:#f08a24} .blk{stroke:#222}
   @media (prefers-color-scheme: dark){
-    .bg{fill:#0d1117} .card{fill:#161b22;stroke:#30363d} .t{fill:#e6edf3} .s{fill:#9aa7b0} .wago{fill:#1f262d;stroke:#56646a}
+    .bg{fill:#0d1117} .card{fill:#161b22;stroke:#30363d} .t{fill:#e6edf3} .s{fill:#9aa7b0} .wago{fill:#1f262d;stroke:#56646a} .blk{stroke:#8b949e}
   }
 </style>
 <rect class="bg" width="960" height="330" rx="16"/>
@@ -24,7 +24,7 @@
 <path d="M550,130 L800,130" stroke="#d93a3a" stroke-width="6" fill="none"/>
 <!-- blue -> black GND -->
 <path d="M160,185 L410,185" stroke="#2f6fd6" stroke-width="6" fill="none"/>
-<path d="M550,185 L800,185" stroke="#222" stroke-width="6" fill="none"/>
+<path class="blk" d="M550,185 L800,185" stroke-width="6" fill="none"/>
 <!-- yellow -> yellow GPIO26 -->
 <path d="M160,240 L410,240" stroke="#e8c21a" stroke-width="6" fill="none"/>
 <path d="M550,240 L800,240" stroke="#e8c21a" stroke-width="6" fill="none"/>

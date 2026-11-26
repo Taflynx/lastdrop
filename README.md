@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/render-on-tank.png" alt="Lastdrop hanging on the water tank" width="440">
+  <img src="docs/images/render-on-tank.png" alt="Lastdrop hanging on the water tank" height="400">
   &nbsp;&nbsp;
-  <img src="docs/images/render-engraving.png" alt="The engraved LED face with the turquoise logo" width="380">
+  <img src="docs/images/render-engraving.png" alt="The engraved LED face with the turquoise logo" height="400">
 </p>
 
 ---
