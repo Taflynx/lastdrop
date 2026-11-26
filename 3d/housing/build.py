@@ -45,7 +45,7 @@ NAME_GROW = 0.20                                 # outline grown per side: the s
 # line: (text, cap/x height, extra letter spacing, grow) in BYLINE_FONT, or a dict of font segments on one baseline (see branding.rich_line)
 import os
 _F = lambda n: os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "fonts", n)
-BYLINE = []                                     # 2026-11-26: "BY IGAL TAFLEV" removed (Igal); was 1.8 mm caps, unreadable in print
+BYLINE = []                                     # 2026-11-26: the byline line under the name was removed (Igal); its 1.8 mm caps were unreadable in print
 # site name on its own, plain grey engraving at the bottom of the LED face (was 2.1 mm under the name, too small to read)
 URL = {"h": 3.0, "ref": "x", "segments": [("taflev", _F("Geist-600.ttf"), 0.0, 0.10),
                                           (".com", _F("InstrumentSerif-Italic.ttf"), 0.0, 0.18)]}
