@@ -35,7 +35,7 @@ parts are printed from, so every part ends exactly where it belongs. Allow about
 
 ## 1. Sensor into the head
 
-<img src="clips/steps/step-01.webp" alt="The white sensor slides into the turquoise head from the tank side." width="100%">
+<img src="clips/steps/step-01.webp" alt="The white sensor, its black cable attached, slides into the turquoise head from the tank side; the cable leaves through the slot at the top." width="100%">
 
 Push the sensor into the head from the front (the tank side), **narrow end first**, until the wide face is flush with
 the front. The wide face is the sensing face: it must end up flat against the tank. The three crush ribs hold it; a firm
@@ -67,18 +67,20 @@ slider can still move.
 
 ## 5. ATOM Lite and key
 
-<img src="clips/steps/step-05.webp" alt="Cutaway: the ATOM Lite slides in at the top of the box, then the grey key behind it." width="100%">
+<img src="clips/steps/step-05.webp" alt="Cutaway: the ATOM Lite slides in at the top of the box, its Grove wires run along the tank side and down through the slot under the key, then the grey key slides in behind it." width="100%">
 
 *The LED face is cut away here to show the inside.*
 
 Plug the Grove cable into the ATOM first. Then set the ATOM at the top of the box from the open front: **USB-C port
-toward the door side**, LED toward the engraved face so it shines through the slot. The white Grove cable runs down in the
-narrow gap on the tank side and drops through the shelf opening. Slide the grey ATOM key in behind it: it stops the ATOM
-from moving when you push the USB plug in.
+toward the door side**, LED toward the engraved face so it shines through the slot. The Grove wires leave the plug
+sideways: lead them into the narrow gap on the tank side, along it toward the lid, and down through the shelf opening
+**under the ATOM key**. From there they run back over the top WAGO track to the wire room by the door, where they split
+to the WAGOs in the next step. Slide the grey ATOM key in behind the ATOM: it stops the ATOM from moving when you push
+the USB plug in.
 
 ## 6. Wires into the WAGOs
 
-<img src="clips/steps/step-06.webp" alt="Cutaway: three WAGO connectors press into their tracks, and the wire pairs run into them." width="100%">
+<img src="clips/steps/step-06.webp" alt="Each wire pair is joined in its WAGO first; then the WAGOs slide into their tracks from the door side, one by one." width="100%">
 
 Cut the Dupont plugs off the Grove cable, then strip **11 mm** from each wire. Twist the thin Grove strands tight
 before they go in. Join each pair in one WAGO:
@@ -91,8 +93,9 @@ before they go in. Join each pair in one WAGO:
 - **Grove white is not used.** Cut it short and cover the end with tape or heat-shrink.
 
 Lift the lever, push the bare end in until it stops, close the lever, and **tug each wire** gently: it must not move.
-Wire colours vary between sellers, so check yours against the product page. Then press each WAGO flat into its track,
-**wire entries toward the door**, and tuck the spare wire into the storage space behind them.
+Wire colours vary between sellers, so check yours against the product page. Then push each WAGO into its track **from
+the door side, closed end first**, until it clicks past the bumps and stops at the inner wall; the wire entries face the
+door. Tuck the spare wire into the storage space between the WAGOs and the door.
 
 ## 7. Lid and door
 
