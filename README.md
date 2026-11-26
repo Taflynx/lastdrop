@@ -47,8 +47,9 @@ The housing is parametric, so it can be adapted to another tank (see [Fit it to 
 | XKC-Y25-NPN liquid level sensor, 5 to 12 V | 1 (a spare is handy) | non-contact, NPN output | [Keyestudio](https://keyestudio.com/products/xkc-y25-5-12v-npn-output-interface-non-contact-adjustable-water-level-sensor) · [AliExpress search](https://www.aliexpress.com/w/wholesale-XKC%2DY25%2DNPN.html) |
 | WAGO 221-412 lever connector | 3 | joins the sensor wires to the Grove wires | [WAGO](https://www.wago.com/ca-en/installation-terminal-blocks-and-connectors/compact-splicing-connector/p/221-412) |
 | USB-C cable + 5 V USB power supply | 1 | powers the ATOM | any |
-| PETG filament | about 105 g | all printed parts, heat-safe next to the machine | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
-| Turquoise PETG (optional) | about 20 g | coloured logo, needs an AMS / AMS lite | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
+| PETG, light grey | about 110 g | frame, rails, lid, door; heat-safe next to the machine | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
+| PETG, turquoise | about 45 g | slider, sensor head, logo and name | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
+| PETG, yellow | about 3 g | the four thumb screws | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
 
 No glue and no bought screws: the four thumb screws are printed.
 
@@ -118,11 +119,22 @@ Everything hangs on the rim of the original tank. Nothing is stuck to the machin
 
 All files are for a **Bambu Lab A1 mini**, **PETG**, already oriented. They open in Bambu Studio with the settings inside.
 
-| File | What |
-|---|---|
-| [`lastdrop_housing_A1mini_PETG_2plates.3mf`](3d/housing/print/lastdrop_housing_A1mini_PETG_2plates.3mf) | everything, on 2 plates (one colour): about 1.5 h + 3.5 h, 105 g |
-| [`lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf`](3d/housing/print/lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf) | top frame with the turquoise logo, for the AMS lite (grey in slot 1, turquoise in slot 2) |
-| [`3d/housing/print/*.stl`](3d/housing/print) | each part on its own, oriented for printing, for any slicer |
+**[`lastdrop_housing_A1mini_PETG_AMS_4plates.3mf`](3d/housing/print/lastdrop_housing_A1mini_PETG_AMS_4plates.3mf)**
+is the whole housing in one file. Load the AMS lite with **grey in slot 1, turquoise in slot 2, yellow in slot 3**.
+
+| Plate | Parts | Colour | Time |
+|---|---|---|---|
+| 1 | sensor head + slider (print this first: it tests the fits) | turquoise | about 1 h 10 |
+| 2 | 4 thumb screws | yellow | about 25 min |
+| 3 | rails, lid, door, ATOM key | grey | about 1 h 20 |
+| 4 | top frame with the logo | grey + turquoise | about 7 h 40 |
+
+Plates 1 to 3 use one colour each, so they print without colour changes; without an AMS, just load that spool.
+On plate 4 the logo and the name change colour on every layer that has them. Without an AMS, set the logo part to
+grey and it prints in about 2 h 20 with the same engraving.
+
+Also here: [`lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf`](3d/housing/print/lastdrop_top_frame_colour_A1mini_PETG_AMS.3mf)
+(plate 4 on its own) and [every part as an STL](3d/housing/print), oriented for printing, for any slicer.
 
 | STL | Qty |
 |---|---|
@@ -149,14 +161,14 @@ All files are for a **Bambu Lab A1 mini**, **PETG**, already oriented. They open
 
 ### Printing tips
 
-- **Print a test first.** Plate 1 of the 2-plate file is the sensor head, the carriage and the screws. It is small and
-  tells you quickly whether the fits are right on your printer.
+- **Print a test first.** Plate 1 is the sensor head and the slider. It is small and tells you quickly whether the fits
+  are right on your printer.
 - **Cable holes are 4.6 mm** for a 3.7 mm sensor cable. 4.0 and 4.5 mm printed too tight.
 - **The threads are printed** (M6 in the rails, printed thumb screws). The rails are printed with the hole axis vertical
   so the threads come out round. Turn the screws in gently the first time.
-- **The colour version** prints the LED face standing up, so the printer changes filament on every layer that has
-  colour: about 7.5 h instead of about 2.3 h for the grey-only frame. The purge goes into the infill to save filament.
-  If you do not have an AMS, the one-colour file has the same engraving without colour.
+- **The top frame prints with the LED face standing up**, so that the box walls stand and need almost no supports.
+  The price is a colour change on every layer with logo: about 7 h 40 instead of 2 h 20 in one colour. The purge goes
+  into the hidden infill to save filament.
 - **Small text:** every engraved stroke is at least 0.5 to 0.6 mm wide, so a 0.4 mm nozzle can draw it. If you change
   the text, keep it that way (`NAME_GROW` and `BYLINE_GROW` in `build.py`).
 

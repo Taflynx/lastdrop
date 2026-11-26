@@ -68,57 +68,9 @@ def settings():
           '    <model_instance>', f'      <metadata key="object_id" value="{PAR}"/>', '      <metadata key="instance_id" value="0"/>',
           '      <metadata key="identify_id" value="1001"/>', '    </model_instance>', '  </plate>', '</config>']
     return "\n".join(L)
+from bambu_settings import project_settings as _ps
 def project_settings():
-    """Bambu Studio only accepts a multi-filament project block in its own exact layout. So: start from a 2-filament
-    A1 mini block that Bambu Studio itself saved (project_settings_multicolour_template.json), keep its key set, take
-    every value from our PETG project (project_settings_A1mini_PETG.json), and grow the per-filament lists to 3."""
-    t = json.load(open("project_settings_multicolour_template.json"))
-    o = json.load(open("project_settings_A1mini_PETG.json"))
-    n = len(COLOURS)
-    nt = len(t["filament_colour"])                                # filaments in the template (2)
-    fil = [k for k, v in t.items() if isinstance(v, list) and len(v) == nt
-           and not k.startswith("machine_") and k != "start_end_points"]
-    d = {}
-    for k, v in t.items():
-        if k in fil:
-            src = o[k] if isinstance(o.get(k), list) and o[k] else v
-            d[k] = [src[0]] * n
-        elif k in o and k not in ("version",):
-            d[k] = o[k]
-        else:
-            d[k] = v
-    d.update({
-        "filament_colour": [c + "FF" for c in COLOURS], "filament_multi_colour": [c + "FF" for c in COLOURS],
-        "filament_self_index": [str(i + 1) for i in range(n)], "filament_ids": ["GFG99"] * n,   # Generic PETG
-        "filament_settings_id": ["Generic PETG @BBL A1M"] * n, "filament_map": ["1"] * n,
-        # purge per colour change (mm3), row = from, column = to: grey->turquoise 160, turquoise->grey 260 (dark to light
-        # needs more). The purge goes into the hidden infill first (flush_into_infill), so less ends up on the prime tower.
-        "flush_volumes_matrix": [str(0 if i == j else (160 if i == 0 else 260)) for i in range(n) for j in range(n)],
-        "flush_into_infill": "1",
-        "flush_volumes_vector": ["140"] * (2 * n),               # Bambu saves 2 per filament
-        "wipe_tower_x": ["140"] * len(t["wipe_tower_x"]), "wipe_tower_y": ["20"] * len(t["wipe_tower_y"]),
-        "different_settings_to_system": [o["different_settings_to_system"][0] + ";curr_bed_type"] + [""] * n + [""],
-        "curr_bed_type": "Textured PEI Plate", "enable_prime_tower": "1", "from": "project", "name": "project_settings",
-        "version": o.get("version", t["version"]),
-    })
-    return json.dumps(d, indent=4)
-
-def project_settings_old():
-    d = json.load(open("project_settings_A1mini_PETG.json"))
-    n = len(COLOURS)
-    # filament settings (list from Bambu's own filament profiles, filament_keys.json): repeat the whole list once per
-    # filament. Some have several values per filament (e.g. AMS drying temperatures), so repeat the list, not one value.
-    for k in json.load(open("filament_keys.json")):
-        if isinstance(d.get(k), list):
-            d[k] = d[k] * n
-    d["filament_colour"] = COLOURS
-    d["filament_map"] = ["1"] * n
-    d["flush_volumes_vector"] = ["140", "140"]                    # one pair per extruder (the A1 mini has one)
-    d["flush_volumes_matrix"] = [str(0 if i == j else (380 if i == 0 else 220)) for i in range(n) for j in range(n)]
-    d["inherits_group"] = [d["inherits_group"][0]] + [d["inherits_group"][1]] * n + [d["inherits_group"][-1]]
-    d["different_settings_to_system"] = [d["different_settings_to_system"][0]] + [""] * n + [""]
-    d["enable_prime_tower"] = "1"
-    return json.dumps(d, indent=4)
+    return _ps(COLOURS)
 
 CT = ('<?xml version="1.0" encoding="UTF-8"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">\n'
       ' <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>\n'
