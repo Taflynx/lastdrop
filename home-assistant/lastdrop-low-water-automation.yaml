@@ -1,0 +1,44 @@
+# Lastdrop: Home Assistant automation for the low-water alert.
+# Paste it in Settings > Automations > (new) > Edit in YAML, then change the entity IDs marked CHANGE.
+#
+# What it does:
+#   - when the tank runs low, push a notification to your phone and announce it on a speaker;
+#   - and again when the espresso machine is switched on while the tank is still low
+#     (only if the machine is on a smart plug; delete that trigger if it is not);
+#   - only between 07:00 and 22:00 and only when someone is home.
+id: lastdrop_low_water
+alias: Coffee - Lastdrop low water
+description: Low-water alert from the Lastdrop sensor on the espresso machine tank.
+triggers:
+  - trigger: state
+    entity_id: binary_sensor.lastdrop_water_ok
+    from: "on"
+    to: "off"
+    for: "00:00:10"
+    id: level_dropped
+  - trigger: state
+    entity_id: switch.espresso_machine_plug          # CHANGE: the machine's smart plug (or delete this trigger)
+    to: "on"
+    id: machine_on
+conditions:
+  - condition: state
+    entity_id: binary_sensor.lastdrop_water_ok
+    state: "off"
+  - condition: time
+    after: "07:00:00"
+    before: "22:00:00"
+  - condition: numeric_state
+    entity_id: zone.home
+    above: 0
+actions:
+  - action: notify.mobile_app_your_phone             # CHANGE: your phone (Companion app)
+    data:
+      title: Coffee machine water is low
+      message: The tank is low. Refill it before the next shot.
+  - action: tts.speak
+    target:
+      entity_id: tts.home_assistant_cloud            # CHANGE: your text-to-speech engine
+    data:
+      media_player_entity_id: media_player.kitchen_speaker   # CHANGE: the speaker to announce on
+      message: The coffee machine is low on water. Please refill the tank.
+mode: single

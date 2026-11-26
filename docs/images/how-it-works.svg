@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="How Lastdrop works: the sensor on the tank wall feels the water, the ATOM Lite reports to Home Assistant, which announces on a speaker and pushes to your phone">
+<style>
+  .bg{fill:#ffffff} .card{fill:#f4f7f7;stroke:#d5dede} .t{fill:#1d2a2e;font:600 15px system-ui,-apple-system,Segoe UI,sans-serif}
+  .s{fill:#5b6b70;font:13px system-ui,-apple-system,Segoe UI,sans-serif} .ln{stroke:#9fb1b4;stroke-width:2;fill:none}
+  .ac{fill:#1FB5AC} .acs{stroke:#1FB5AC} .tank{fill:none;stroke:#7d8f93;stroke-width:2.5} .water{fill:#bfe9e5}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#0d1117} .card{fill:#161b22;stroke:#30363d} .t{fill:#e6edf3} .s{fill:#9aa7b0} .ln{stroke:#4b5a60}
+    .tank{stroke:#8b9ca0} .water{fill:#14524e}
+  }
+</style>
+<rect class="bg" width="960" height="300" rx="16"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9fb1b4"/></marker></defs>
+
+<!-- tank + sensor -->
+<rect class="card" x="20" y="30" width="200" height="240" rx="14"/>
+<path class="tank" d="M60,70 L60,220 Q60,232 72,232 L148,232 Q160,232 160,220 L160,70"/>
+<rect class="water" x="62" y="168" width="96" height="62"/>
+<path class="ln" d="M62,168 L158,168" stroke-dasharray="4 4"/>
+<rect class="ac" x="162" y="150" width="14" height="36" rx="3"/>
+<text class="t" x="120" y="58" text-anchor="middle">Water tank</text>
+<text class="s" x="120" y="256" text-anchor="middle">sensor outside the wall</text>
+
+<!-- ATOM -->
+<rect class="card" x="270" y="30" width="190" height="240" rx="14"/>
+<rect x="320" y="100" width="90" height="90" rx="12" fill="#2b2f33"/>
+<circle cx="365" cy="145" r="12" class="ac"/>
+<text class="t" x="365" y="58" text-anchor="middle">ATOM Lite</text>
+<text class="s" x="365" y="222" text-anchor="middle">ESPHome</text>
+<text class="s" x="365" y="242" text-anchor="middle">LED: green ok, red low</text>
+
+<!-- HA -->
+<rect class="card" x="510" y="30" width="190" height="240" rx="14"/>
+<path d="M605,95 L655,140 L645,140 L645,190 L565,190 L565,140 L555,140 Z" fill="none" class="acs" stroke-width="5" stroke-linejoin="round"/>
+<text class="t" x="605" y="58" text-anchor="middle">Home Assistant</text>
+<text class="s" x="605" y="222" text-anchor="middle">automation</text>
+<text class="s" x="605" y="242" text-anchor="middle">07:00 to 22:00, someone home</text>
+
+<!-- outputs -->
+<rect class="card" x="750" y="30" width="190" height="110" rx="14"/>
+<text class="t" x="845" y="72" text-anchor="middle">Phone</text>
+<text class="s" x="845" y="96" text-anchor="middle">push notification</text>
+<rect class="card" x="750" y="160" width="190" height="110" rx="14"/>
+<text class="t" x="845" y="202" text-anchor="middle">Speaker</text>
+<text class="s" x="845" y="226" text-anchor="middle">spoken announcement</text>
+
+<path class="ln" d="M220,150 L268,150" marker-end="url(#a)"/>
+<path class="ln" d="M460,150 L508,150" marker-end="url(#a)"/>
+<text class="s" x="484" y="140" text-anchor="middle">Wi-Fi</text>
+<path class="ln" d="M700,130 L748,90" marker-end="url(#a)"/>
+<path class="ln" d="M700,170 L748,212" marker-end="url(#a)"/>
+</svg>

@@ -1,0 +1,17 @@
+# secrets: never commit
+secrets.yaml
+.env
+*.env
+# ESPHome build output
+.esphome/
+# Python / model build output
+__pycache__/
+.venv/
+3d/housing/asm_*.stl
+3d/housing/*_local.stl
+3d/housing/verify_results.json
+3d/housing/print/foot.stl
+3d/housing/print/setscrew.stl
+3d/housing/print/*.step
+3d/housing/print/classika_housing_A1mini_plate.3mf
+3d/housing/_tank_tmp.stl
