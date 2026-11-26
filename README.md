@@ -41,7 +41,8 @@ outside, and the housing is parametric, so it can be fitted to another tank.
 | M5Stack Grove2Dupont cable, 20 cm | 1 | [M5Stack shop](https://shop.m5stack.com/products/grove2dupont-conversion-cable-20cm-5pairs) |
 | XKC-Y25-NPN liquid level sensor, 5 to 12 V (a spare is handy) | 1 | [Keyestudio](https://keyestudio.com/products/xkc-y25-5-12v-npn-output-interface-non-contact-adjustable-water-level-sensor) · [AliExpress](https://www.aliexpress.com/w/wholesale-XKC%2DY25%2DNPN.html) |
 | WAGO 221-412 lever connector | 3 | [WAGO](https://www.wago.com/ca-en/installation-terminal-blocks-and-connectors/compact-splicing-connector/p/221-412) |
-| USB-C cable and a 5 V USB power supply | 1 | any |
+| USB-C cable long enough to leave the machine, and a 5 V USB power supply | 1 | any |
+| Wire stripper for 20 to 30 AWG | tool | [Klein Tools 11057](https://www.kleintools.com/product/11057) |
 | PETG: grey about 110 g, turquoise about 45 g, yellow about 3 g | | [Bambu Lab PETG HF](https://us.store.bambulab.com/products/petg-hf) |
 
 ### 2. Wiring
@@ -98,12 +99,14 @@ in Bambu Studio. Every setting is inside. AMS lite: **grey in slot 1, turquoise 
 
 ### 6. Assemble and hang
 
+**[Step-by-step assembly guide, animated →](docs/ASSEMBLY.md)** Every step as a short 3D animation, with a close-up of the WAGO wiring, the tools, and what to check.
+
 1. Push the sensor into the head from the front, narrow end first, until the wide face is flush.
 2. Run its cable up through the slider's ring and into the floor hole of the box.
 3. Join the wires in the WAGOs and press each one into its track, wire entries toward the door.
 4. Plug the Grove cable into the ATOM, set it at the top with its LED behind the slot, and add the ATOM key behind it.
 5. Screw the rails to the frame, click the slider in at the height you want, and clip the head on.
-6. Slide the lid and the door on (they lift off after an 8 mm slide, no tools), hang the frame on the tank and plug in USB-C.
+6. Slide the lid and the door on (they lift off after an 8 mm slide, no tools), hang the frame on the tank, and run the USB-C cable out of the back of the machine to a 5 V supply.
 
 Set the height a little above the level at which your machine stops: the alert fires when the water drops below the sensor.
 
@@ -132,7 +135,7 @@ firmware/          ESPHome config and a secrets example
 home-assistant/    the low-water automation
 3d/housing/        the CadQuery model, print pipeline, checks and print files
 3d/fonts/          the fonts of the engraving
-docs/              images, panels and printing clips
+docs/              assembly guide, images, panels, printing and step clips
 ```
 
 ## About
